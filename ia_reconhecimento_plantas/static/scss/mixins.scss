@@ -1,0 +1,18 @@
+@mixin FlexCenter(){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin WidthHeight($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin BorderRadius($topleft, $topright, $bottomleft, $bottomright){
+    border-top-left-radius: $topleft;
+    border-top-right-radius: $topright;
+    border-bottom-left-radius: $bottomleft; 
+    border-bottom-right-radius: $bottomright;
+}

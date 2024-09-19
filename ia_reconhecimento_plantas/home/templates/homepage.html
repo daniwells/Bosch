@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../../static/css/main.css'%}">
+    <title>Upload</title>
+</head>
+<body>
+    <div class = "navbar">
+        <div class = "navbar__logo">
+            <img src="../../static/assets/images/logo.svg" alt="">
+        </div>
+    </div>
+
+    <div class="background">
+        <div class = "container">
+            <div class="container__center">
+                {% if image %}
+                 <div class = container__center__image>
+                    
+                    <img class = container__center__image__style src="/media/images/{{ image.src }}" alt="Planta">
+                </div>
+                <div class = container__center__description>
+                    <h2>{{ image.class }}</h2>
+                </div>
+                {% else %}
+                <form method="POST" id="form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" id="plant" name="plant" onChange="handleSubmit()">
+                    <label for="plant" class="container__center__button"> Upload your image here </label>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let form = document.getElementById("form");
+        let plant = document.getElementById("plant");
+
+        function handleSubmit(){
+            console.log("ENTROUUUUU");
+            form.submit();
+        }
+    </script>
+</body>
+</html>

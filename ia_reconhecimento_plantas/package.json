@@ -1,0 +1,16 @@
+{
+  "name": "ia_reconhecimento_plantas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass --watch static/scss/main.scss static/css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.78.0"
+  },
+  "description": ""
+}
