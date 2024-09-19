@@ -1,0 +1,26 @@
+<div class="h-full flex flex-col justify-center items-center bg-purple-700">
+    <div *ngIf="error" class=" bg-red-300 bg-opacity-70 text-red-800 shadow d-flex justify-center p-5 w-96 rounded border border-red-800 mb-5 ">
+        <span>{{ error }}</span>
+    </div>    
+    <form [formGroup]="form" action="" method="POST" class="bg-white shadow d-flex justify-center p-10 w-96 rounded border border-gray">
+        <h1 class="text-2xl font-bold text-gray-600">User Login</h1>
+        <div class="my-10" >
+            <div class="mb-5" >
+                <label for="username" class="text-gray-600" >Username</label>
+                <input type="text" id="username" [formControl]="form.controls.username" class="bg-gray-100 w-full mt-2 py-2 px-3 rounded outline-none border border-gray" >
+            </div>
+            <div >
+                <label for="password" class="text-gray-600">Password</label>
+                <input type="password" id="password" [formControl]="form.controls.password" class="bg-gray-100 w-full mt-2 py-2 px-3 rounded outline-none border border-gray">
+            </div>
+        </div>
+        <div class="w-full d-flex justify-center" >
+            <button (click)="logar()" class=" w-full py-2 bg-purple-700 text-white font-semibold rounded hover:bg-purple-800">Logar</button>
+        </div>
+    </form>
+    
+    <p>{{ resposta?.email }}</p>
+    <p>{{ resposta?.firstName }}</p>
+    <p>{{ resposta?.lastName }}</p>
+    <img [src]="resposta?.image" alt="">
+</div>

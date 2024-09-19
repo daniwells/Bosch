@@ -1,0 +1,25 @@
+.star {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: transparent;
+}
+
+.star::before,
+.star::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 12%;
+    width: 50px;
+    height: 50px;
+    background: white;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 100% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 0% 35%, 39% 35%
+    );
+    transform: rotate(45deg);
+}
+
+.star::after {
+    transform: rotate(-45deg);
+}

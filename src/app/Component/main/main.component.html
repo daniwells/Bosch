@@ -1,0 +1,26 @@
+
+<div class="w-full">
+    <app-menu></app-menu>
+    <main class="flex px-20" >
+        <div class="w-2/6 my-40">
+            
+        </div>
+        <div class="w-4/6 grid grid-cols-3 gap-10 my-40">
+            <div 
+                *ngFor="let product of products" 
+                class="bg-white relative flex justify-center items-center flex-col p-10 shadow w-11/12 rounded border border-gray cursor-pointer hover:bg-gray-100"
+            >
+                
+                <div class="absolute w-16 h-16 bg-red-500 text-white rounded-full -top-5 -right-5 flex justify-center items-center">
+                    <div class="star">
+                        {{ product?.discountPercentage }} %
+                    </div>
+                </div>
+                <h2 class="font-bold text-lg text-gray-600 mb-5">{{ product?.title }}</h2>
+                <p class="text-gray-600 justify-center mb-10">{{ product?.description }}</p>
+                <button class="w-3/6 py-2 bg-orange-300 text-white font-semibold rounded-full hover:bg-orange-500">Buy</button>   
+            </div>
+        </div>
+    </main>
+</div>
+
